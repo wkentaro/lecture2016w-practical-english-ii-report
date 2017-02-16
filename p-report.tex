@@ -1,10 +1,8 @@
-\documentclass[twocolumn]{preport}
-\usepackage[dvipdfmx]{graphicx}
-\graphicspath{{figs/}}
+\documentclass[letter, twocolumn]{ieeeconf}
+\usepackage{url}
 
-\title{1192年度 研究要旨: \\
-プログレスレポートのテンプレート}
-\author{1192年 源頼朝}
+\title{ {\small Practical English Skill II} \\ Makeup Reporting Assignment}
+\author{48-166636, Kentaro Wada}
 
 \begin{document}
 
@@ -13,44 +11,111 @@
 \thispagestyle{empty}
 \sloppy
 
-\section{はじめに}
+\section{Introduction}
 
-本稿はプログレスレポートのテンプレートである\cite{Sakai}．
+I selected a TED talk, ``How we're teaching computers to understand pictures'' by Fei-Fei Li
+\footnote{\url{http://www.ted.com/talks/fei_fei_li_how_we_re_teaching_computers_to_understand_pictures}}.
+Because currently my research topic is the perception of the real world by robot
+and the title of the talk interests me.
 
-本稿における「、」や「。」は、\verb|make pub|を実行することで、「，」や「．」に変更される。
+In the following sections,
+I describe the abstract, my opinions and relationship with my research topic in detail.
 
-図は\figref{nowprinting}や\tabref{sample}として参照する．
+\section{Abstract of the talk}
 
-\begin{figure}[tbh]
- \begin{center}
-  \begin{minipage}{0.3\columnwidth}
-   \includegraphics[width=\columnwidth]{nowprinting.eps}
-   \caption{eps図の参考例}
-  \end{minipage}
-  \hspace{0.15\columnwidth}
-  \begin{minipage}{0.3\columnwidth}
-   \includegraphics[width=\columnwidth]{dj.jpg}
-   \caption{jpg図の参考例}
-  \end{minipage}
-  \label{figure:nowprinting}
- \end{center}
-\end{figure}
+In the introduction part, the presenter talks about three-year-old children,
+and the ability of image captioning with some example images on screen.
+After that, she points out the poor ability of the current computers about that captioning task
+compared to these children.
+Her talk starts with posing a problem on current computers.
+She also raises some situations where smarter computers, which would recognize the image,
+could help people: navigate blind people, track change of forest, security camera, and so on.
 
-\begin{table}[tbh]
- \begin{center}
-  \begin{tabular}{|l|r|} \hline
-  A1 & B1 \\
-  A2 & B2 \\ \hline
-  \end{tabular}
-  \caption{図の参考例}
-  \label{table:sample}
- \end{center}
-\end{table}
+Next, she goes down to more technical contents in the talk,
+with explaining about why recognizing world from images is so difficult.
+It is because image is just a two dimensional array of numbers,
+and extracting meaning from these numbers is required to realize the meaning of the image.
+She also talks about the traditional method to teach machines to recognize the world,
+with her experiences in the university when she was a PhD. student.
 
-\section{おわりに}
+After the description of these difficulties,
+she gives the story about the decision to collecting huge number of images
+to train machines to recognize the meaning of images.
+That dataset, ``IMAGENET'', is one of the most largest dataset on both quality and quantity.
 
-\bibliographystyle{junsrt}
-\bibliography{p-report}
+She moves to computer algorithms to train the computers using that training dataset,
+with a short description about neural networks especially convolutional networks.
+And the recent results by these algorithms on recognizing objects inside images.
+But she also raises another task by computer that beyond recognizing object on images,
+which is the description about the image as sentences.
+
+She gives description about the algorithms to generate sentences from image,
+that has a recurrent construction in the neural network model.
+And the image captioning results by computer are given with example images on the screen.
+She also some desirable progress in these captioning skills to break current limitation
+of machine abilities.
+
+In conclusion, she gives lots of situations where the image recognition technology can help human:
+medicine, car driving, robot for rescue, and exploring in space.
+And she closes the presentation with a message that machine can collaborate and help with human.
+
+\section{My Opinion}
+
+In this section, I describe my opinion, question, and feeling after listening that talk.
+
+I was impressed by her skills of speech to describe technical stuffs to people
+who are not so familiar with research topics.
+The construction of presentation is similar to that of research paper: firstly raise problem
+in current society and methodologies, give conventional methods with their limitations,
+propose methods and its performance.
+But she tries not to use technical terms, for example ``see'' instead of ``recognition'',
+which is usually used in computer vision research papers.
+She also use technique to shortly describe about technical stuff using a single image:
+for example representing machine learning model as a box with gears.
+This gives people to understand the word with the image or icon, and makes it easier.
+
+A question I had while listening the talk was the description that
+suitable algorithm to train the machine using large size of image dataset.
+I can understand that convolutional network is one of the algorithm in deep learning methods
+and suitable to process large number of images.
+But I felt a jump in the explanation, and thought someone in the audience could not understand
+about it. In my opinion, she can explain neural networks first,
+and then describe convolutional network is one of the networks
+which is known as a suitable model to process images.
+
+\section{Relationship with my research}
+
+In this section, I describe about the relationship between this TED talk and my research topic.
+
+My research topic is 3D recognition of the real world, especially for robot tasks. Because
+robot needs to understand what objects are located, what state it is
+in order to conduct task in the real world.
+Recognition of objects from image, which is the topic in this talk, is also one of the components
+in the system I am constructing in the research.
+In my system, robot recognize objects from image,
+transform the result to 3D information, accumulate that information in time series,
+plan to manipulate objects, and complete tasks.
+So object recognition and understanding its state is the first component in the system,
+and the topic in the talk is closely related to my research.
+
+Processing big data which is described in the talk, is also related to my research topic.
+I also use data-driven approach in the research to recognize the world three-dimensionally,
+and a machine learning method, deep learning, described in the talk.
+To generate the large scale dataset,
+I use automation methods using robot to collect the sets of image and label.
+In the talk, the presenter says the dataset is collected from web and annotated by human,
+but I also use different approach using robot arms. That automated data collection system
+is usually called self-supervised system, and a topic in robotic research field
+to boost ability of machines, especially robots, to conduct tasks in the real world.
+
+In the conclusion in the talk, she says about the collaboration of machine and human,
+and machine can be more helpful to human.
+My research purpose is also to help human by substituting some tasks of people by robot,
+and I think this is also a point which is close to the topic in the talk.
+
+\section{Conclusions}
+
+In this report, I selected a TED talk, whose topic is ability of machine to recognize the world,
+and described the abstract, opinion, and relationship with my research topics.
 
 \end{document}
-
